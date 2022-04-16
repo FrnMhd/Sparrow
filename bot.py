@@ -1,5 +1,5 @@
 import requests
-import keys
+import config
 import pandas as pd
 import tweepy
 import os
@@ -8,7 +8,7 @@ import os
 
 def get_crypto_rates(base_currency='INR', assets='BTC,ETH,XRP'):
     url = 'https://api.nomics.com/v1/currencies/ticker'
-    payload = {'key': keys.API_KEY1, 'convert': base_currency, 'ids': assets, 'interval': '1d'}
+    payload = {'key': config.API_KEY1, 'convert': base_currency, 'ids': assets, 'interval': '1d'}
     response = requests.get(url, params=payload)
     data = response.json()
 
